@@ -16,3 +16,4 @@ class Solution(Problem):
 if __name__ == '__main__':
     solution = Solution(48)
     solution.solve()
+    # output: 9110846700

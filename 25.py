@@ -1,13 +1,15 @@
 #!/usr/bin/python3 
-# -*- coding: utf-8 -*-
-"""
-What is the index of the first term 
+'''
+- What is the index of the first term 
 in the Fibonacci sequence to contain 1000 digits?
-"""
+'''
+
+from base import Problem
+
 def index_1000_fibo():
 	"""
-	print index of the first term in the fibo sequence 
-	break if length of number == 1000
+	Print index of the first term in the fibo sequence 
+	Break if length of number == 1000
 	"""
 	count = 0
 	a, b = 0, 1
@@ -19,5 +21,13 @@ def index_1000_fibo():
 			return count
 			break
 
+class Solution(Problem):
+    def solve(self, ):
+        print('Solving problem {}'.format(self.number))
+        output = index_1000_fibo()
+        print('Result: {}'.format(output))
+    
 if __name__ == '__main__':
-	print(index_1000_fibo())
+    solution = Solution(25)
+    solution.solve()
+    # output: 4782

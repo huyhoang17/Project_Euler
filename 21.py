@@ -42,3 +42,4 @@ class Solution(Problem):
 if __name__ == '__main__':
     solution = Solution(21)
     solution.solve(10000)
+    # output: 31626

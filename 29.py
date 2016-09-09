@@ -32,3 +32,4 @@ class Solution(Problem):
 if __name__ == '__main__':
     solution = Solution(29)
     solution.solve()
+    # output: 9183

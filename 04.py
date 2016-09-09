@@ -1,9 +1,17 @@
+#!/usr/bin/python3 
 '''
-Find the largest palindrome made from the product of two 3-digit numbers.
+- A palindromic number reads the same both ways. 
+- The largest palindrome made from the product of two 2-digit numbers 
+is 9009 = 91 × 99.
+
+- Find the largest palindrome made from the product of two 3-digit numbers.
 '''
+
+from base import Problem
+
 def check_palirome(n):
 	'''
-	check palirome number 
+	Check palirome number .
 	'''
 	if str(n) == str(n)[::-1]:
 		return True
@@ -12,7 +20,7 @@ def check_palirome(n):
 
 def max_palirome():
 	'''
-	find the max palirome number i
+	Find the max palirome number i
 	'''
 	palirome = []
 	for i in range(999, 99, -1):
@@ -21,5 +29,13 @@ def max_palirome():
 				palirome.append(i * j)
 	return max(palirome)
 
+class Solution(Problem):
+    def solve(self, ):
+        print('Solving problem {}'.format(self.number))
+        output = max_palirome()
+        print('Result: {}'.format(output))
+    
 if __name__ == '__main__':
-	print(max_palirome())
+    solution = Solution(4)
+    solution.solve()
+    # 906609

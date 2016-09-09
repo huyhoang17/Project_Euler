@@ -10,7 +10,7 @@ def sums_alphabet(names):
 	results = sum([alphabet.find(i) + 1 for i in names if i in alphabet])
 	return(results)
 
-filename = "p022_names.txt"
+filename = '22_data.txt'
 
 #open file with mode "read"
 f = open(filename, "r")

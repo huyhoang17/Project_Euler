@@ -11,13 +11,19 @@ Find the sum of the digits in the number 100!
 from base import Problem
 
 def factorial(num):
-	if num == 1:
-		return 1
-	else:
-		return num * factorial(num - 1)
+    '''
+    Return product of n!.
+    '''
+    if num == 1:
+        return 1
+    else:
+        return num * factorial(num - 1)
 
 def sum_of_the_digits(num):
-	return sum([int(i) for i in str(factorial(num))])
+    '''
+    The sum of the digits in the number 'num' (100)
+    '''
+    return sum([int(i) for i in str(factorial(num))])
 
 class Solution(Problem):
     def solve(self, input_):
@@ -28,3 +34,4 @@ class Solution(Problem):
 if __name__ == '__main__':
     solution = Solution(20)
     solution.solve(100)
+    # output: 648

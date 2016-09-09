@@ -12,7 +12,7 @@ def read_data():
 	'''
 	Read 1000-digit number from file
 	'''
-	with open('8_data.txt') as f:
+	with open('08_data.txt') as f:
 		data = ''.join([i for i in (f.read()).split()])
 		return data # type(str) len(1000)
 
@@ -52,3 +52,4 @@ class Solution(Problem):
 if __name__ == '__main__':
     solution = Solution(8)
     solution.solve()
+    # output: 23514624000
