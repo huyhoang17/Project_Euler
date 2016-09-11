@@ -1,64 +1,47 @@
-#project euler: submit 22
-import string
+#!/usr/bin/python3 
+'''
+- Begin by sorting it into alphabetical order. 
+Then working out the alphabetical value for each name, 
+multiply this value by its alphabetical position 
+in the list to obtain a name score.
 
-def sums_alphabet(names):
-	'''
-	scoring a string
-	'''
-	alphabet = string.ascii_uppercase
-	result = 0
-	results = sum([alphabet.find(i) + 1 for i in names if i in alphabet])
-	return(results)
+- For example, when the list is sorted into alphabetical order, 
+COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, 
+is the 938th name in the list. 
+So, COLIN would obtain a score of 938 × 53 = 49714.
 
-filename = '22_data.txt'
+- What is the total of all the name scores in the file?
+'''
 
-#open file with mode "read"
-f = open(filename, "r")
+from base import Problem
 
-# read data from file 
-data = f.read()
+from string import ascii_uppercase
 
-# list
-data = data.split(",")
-data.sort()
+def words_point(names):
+	result = sum([ascii_uppercase.find(i) + 1 for i in names 
+			if i in ascii_uppercase])
+	return result
 
-# convert list from string 
-data_output = ','.join(data)
-#print(data_output)
-f.close()
+def read_data():
+	with open('22_data.txt') as f:
+		data = f.read().split(',')
+		return sorted(data)
 
-# open file again 
-f = open(filename, "w")
-# write data into file 
-f.write(data_output)
-
-# print(data)
-
-f.close()
-
-def score(data):
-	'''
-	the total of all the name scores in the file
-	'''
-	result = 0
-	output = 0
+def score():
+	data = read_data()
+	result, output = 0, 0
 	for name in data: 
-		result = sums_alphabet(name) * (data.index(name) + 1)
+		result = words_point(name) * (data.index(name) + 1)
 		output += result  
 	return output
 
-print(score(data))
-
-# output = 871198282
-
-
-
-
-
-
-
-
-
-
-
-
+class Solution(Problem):
+    def solve(self):
+        print('Solving problem {}'.format(self.number))
+        output = score()
+        print('Result: {}'.format(output))
+    
+if __name__ == '__main__':
+    solution = Solution(22)
+    solution.solve()
+	# output = 871198282
