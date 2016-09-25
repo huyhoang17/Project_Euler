@@ -2,7 +2,7 @@
 '''
 - Work out the first ten digits of the sum 
 of the following one-hundred 50-digit numbers.
-- Read data from text_13.txt file
+- Read data from 13_data.txt file
 '''
 
 from base import Problem 
@@ -11,7 +11,7 @@ def read_data():
     '''
     Read one-hundred 50-digit numbers from file 
     '''
-    with open('text_13.txt') as f:
+    with open('13_data.txt') as f:
         data = f.read() # type(str)
         lines = data.split() # type(list)
         return lines
