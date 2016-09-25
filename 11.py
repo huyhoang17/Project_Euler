@@ -10,7 +10,6 @@ in the 20×20 grid?
 from base import Problem
 
 def read_data():
-    lst = []
     with open('11_data.txt') as f:
         data = [l.split() for l in f.readlines()]
         for i in range(20):
